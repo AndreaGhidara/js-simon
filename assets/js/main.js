@@ -92,7 +92,6 @@ btnPlayGame.addEventListener("click", function () {
     function countdown() {
         if (time == -1) {
             clearTimeout(timerId);
-            doSomething();
         } else {
             timer.innerHTML = time + ' seconds remaining';
             time--;

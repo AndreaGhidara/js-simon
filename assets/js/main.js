@@ -1,15 +1,7 @@
 const btnPlayGame = document.querySelector("#playGame");
 let computerNumber = [];
 let userNumber = [];
-let test = false;
 
-
-// const main = document.querySelector(".main");
-
-
-// const  containerDiv = document.createElement("div");
-// const containerList = document.createElement("ul");
-// const itemList = document.createElement("li");
 
 //===startFUNCTION======================================================
 
@@ -19,7 +11,6 @@ function getRandomArbitrary(min, max) {
 
 function clear() {
     document.querySelector(".containerList").innerHTML = "";
-    test = true
 }
 
 function createNumber(array) {
@@ -52,7 +43,7 @@ function writeToElement(elementId, content) {
 }
 
 function chiediNumeri() {
-    if (test == true) {
+    
         for (let i = 0; i < computerNumber.length; i++) {
             let scelta = Number(prompt("scegli numero"));
 
@@ -62,7 +53,6 @@ function chiediNumeri() {
                 // console.log(userNumber);
             }
         }
-    }
     let guessedIt = controlArray(computerNumber, userNumber);
     writeToElement("title", `Numbers remembered: ${guessedIt}`)
 }
@@ -115,24 +105,7 @@ btnPlayGame.addEventListener("click", function () {
         document.body.append(containerDiv);
     }
 
-
-
     setTimeout(clear, 31000);
 
     setTimeout(chiediNumeri, 32000);
-
-
 })
-
-
-
-
-function countdown(time, timerId) {
-    if (time == 0) {
-        clearTimeout(timerId);
-        doSomething();
-    } else {
-        elem.innerHTML = time + ' seconds remaining';
-        time--;
-    }
-}
